@@ -1,0 +1,71 @@
+{% set active_page= 'plans' %}
+{% extends "navbar.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-3 col-12">
+                <div class="w3-card-4" style="height: 360px;">
+
+                    <header class="w3-container w3-light-grey">
+                      <h3>Free Tier</h3>
+                    </header>
+                    
+                    <div class="w3-container" style="padding-bottom: 50px;">
+                      <h4 style="text-align: center; padding-top: 20px;"><b>5 GB Storage</b></h4>
+                      <hr>
+                      <p style="padding-top: 30px; padding-bottom: 30px;">In this you have the storage capacity of 5 GB provided to you free of cost.</p>
+                    </div>
+                    <form action="/planSelect" method="POST">
+                        <input type="hidden" name="planId" value="4">
+                        <input type="hidden" name="size" value="5">
+                        <button style="height:35px;" class="btn btn-group w3-block bg-success" readonly="true">Eligible</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 col-12">
+                <div class="w3-card-4" style="height: 360px;">
+
+                    <header class="w3-container w3-light-grey">
+                      <h3>Fixed Plan</h3>
+                    </header>
+                    
+                    <div class="w3-container" style="padding-bottom: 15px;">
+                      <h4 style="text-align: center; padding-top: 20px;"><b>3 different Plans</b></h4>
+                      <hr>
+                      <p style="padding-top: 30px; padding-bottom: 44px;">Here you have the option to choose amongst 3 different fixed plans option that we have. The charges for this plan is on monthly basis.</p>
+                    </div>
+                    <form action="/fixed">
+                        <button style="height:35px;" class="btn btn-group w3-block bg-primary" type="submit">Know More!</span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 col-12">
+                <div class="w3-card-4" style="height: 360px;">
+
+                    <header class="w3-container w3-light-grey">
+                      <h3>Variable Plan</h3>
+                    </header>
+                    
+                    <div class="w3-container">
+                      <h4 style="text-align: center; padding-top: 20px;"><b>Unlimited Data Storage</b></h4>
+                      <hr>
+                      <p style="padding-top: 30px; padding-bottom: 25px;">In this you will not have any fixed cap of data that can be stored instead you can upload and keep as much data you want and the charge for same will be calculated at the end of each day per GB.</p>
+                    </div>
+                    <form action="/planSelect" method="POST">
+                        <input type="hidden" name="planId" value="5">
+                        <input type="hidden" name="size" value="500">
+                        <button class="btn btn-group w3-block bg-primary" style="height:35px;" readonly="true"><span class="glyphicon glyphicon-usd"><b>2/GB</b></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

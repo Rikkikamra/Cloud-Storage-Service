@@ -1,0 +1,60 @@
+{% set active_page= 'signup' %}
+{% extends "navbar.html" %}
+
+{% block body %}
+<div class="container" style="padding-top:100px; text-align: center;">
+    <div class="row">
+      <div class="col-12 col-md-9">
+        <div style="padding-bottom: 50px;text-align: center;">
+            <h4>Create your account and start utilizing:</h4>
+            <hr>
+        </div>
+        <form action="/press" method="POST">
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label for="name" class="col-md-3 col-form-label"><b>Name:</b></label>
+            <div class="col-md-7">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label for="email" class="col-md-3 col-form-label"><b>E-Mail:</b></label>
+            <div class="col-md-7">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label for="phone" class="col-md-3 col-form-label"><b>Phone Number:</b></label>
+            <div class="col-md-7">
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label for="passwd" class="col-md-3 col-form-label"><b>Password:</b></label>
+            <div class="col-md-7">
+              <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Enter Password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label for="repasswd" class="col-md-3 col-form-label"><b>Confirm Password:</b></label>
+            <div class="col-md-7">
+              <input type="password" class="form-control" id="repasswd" name="repasswd" placeholder="Confirm Password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6"></div>
+            <button type="submit" class="btn btn-success col-md-3" name="loginBtn">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+<!-- </div>
+  <div class="container" style="padding-top:100px; text-align: center;"> -->
+    
+  </div>
+
+{% endblock %}

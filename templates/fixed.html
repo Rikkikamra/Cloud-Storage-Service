@@ -1,0 +1,73 @@
+{% set active_page= 'plans' %}
+{% extends "navbar.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-3 col-12">
+                <div class="w3-card-4" style="height: 360px;">
+
+                    <header class="w3-container w3-light-grey">
+                      <h3>Silver Plan</h3>
+                    </header>
+                    
+                    <div class="w3-container" style="padding-bottom: 50px;">
+                      <h4 style="text-align: center; padding-top: 20px;"><b>50 GB Storage</b></h4>
+                      <hr>
+                      <p style="padding-top: 30px; padding-bottom: 30px;">In this you have the storage capacity of 50 GB provided to you for a period of 3 months.</p>
+                    </div>
+                    <form action="/planSelect" method="POST">
+                        <input type="hidden" name="planId" value="2">
+                        <input type="hidden" name="size" value="50">
+                        <button style="height:35px;" class="btn btn-group w3-block bg-primary" readonly="true"><span class="glyphicon glyphicon-usd">5/mo</span></button>
+                   </form> 
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 col-12">
+                <div class="w3-card-4" style="height: 360px;">
+
+                    <header class="w3-container w3-light-grey">
+                      <h3>Gold Plan</h3>
+                    </header>
+                    
+                    <div class="w3-container" style="padding-bottom: 15px;">
+                      <h4 style="text-align: center; padding-top: 20px;"><b>100 GB Storage</b></h4>
+                      <hr>
+                      <p style="padding-top: 30px; padding-bottom: 65px;">Here you have the storage capacity of 100 GB valid for a period of 6 months for you.</p>
+                    </div>
+                    <form action="/planSelect" method="POST">
+                        <input type="hidden" name="planId" value="1">
+                        <input type="hidden" name="size" value="100">
+                        <button style="height:35px;" class="btn btn-group w3-block bg-primary" type="submit"><span class="glyphicon glyphicon-usd">10/mo</span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 col-12">
+                <div class="w3-card-4" style="height: 360px;">
+
+                    <header class="w3-container w3-light-grey">
+                      <h3>Platinum Plan</h3>
+                    </header>
+                    
+                    <div class="w3-container">
+                      <h4 style="text-align: center; padding-top: 20px;"><b>200 GB Storage</b></h4>
+                      <hr>
+                      <p style="padding-top: 30px; padding-bottom: 78px;">Here you have the storage capacity of 100 GB valid for a period of 12 months for you.</p>
+                    </div>
+                    <form action="/planSelect" method="POST">
+                        <input type="hidden" name="planId" value="3">
+                        <input type="hidden" name="size" value="200">
+                        <button class="btn btn-group w3-block bg-primary" style="height:35px;" readonly="true"><span class="glyphicon glyphicon-usd"><b>15/mo</b></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

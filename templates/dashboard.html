@@ -1,0 +1,44 @@
+{% set active_page= 'dashboard' %}
+{% extends "navbar.html" %}
+
+{% block body %}
+<div class="container" style="width: 100%; height:130px; background-color: #F0F0F0;">
+    <h4>Total Occupied {{total_size}} out of a total of 100 GB</h4>
+    <form action="/fileAction" method="POST">
+    <div style="float: right;">
+        <button class="btn btn-group bg-success" type="submit" name="btnClick" value="Download">Download</button>
+        <button class="btn btn-group bg-danger" type="submit" name="btnClick" value="Delete">Delete</button>
+    </div>
+</div>
+<hr>
+<!-- <div class="container">
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <p>Side Details</p>
+        </div>
+        <div class="column2">
+            <p>Main part</p>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    {%for crd in range(1,lengthLoop)%}
+        <div class="col-md-2 w3-panel w3-card" style="width:200px;height:100px;margin: 20px; text-align:center">
+            <h5><b>{{files_in_s3[crd]}}</b></h5> 
+            <input type="radio" name="fileName" value="{{files_in_s3[crd]}}">
+        </div>
+    {%endfor%}
+</div>
+</form>
+<hr>
+<div class="container" style="float: bottom; text-align: center;">
+    <form action="/fileUpload" method="POST"  enctype="multipart/form-data">
+        <div class="fallback">
+        <input class="form-control" name="file" type="file" multiple /><br>
+        <button class="btn btn-group bg-primary" type="Submit" name="submit" >Upload</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

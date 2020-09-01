@@ -1,0 +1,48 @@
+<html lang="en">
+{% block head %}
+<head>
+  <title>SmokeCloud DataService</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  {%if active_page=='home'%}
+  <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='base.css') }}"/>
+  {%endif%}
+  <script src="dropzone.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+{% endblock %}
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">SmokeCloud 2.0</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="{{'active' if active_page == 'home' }}"><a href="/">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {%if session['logged']==1%}
+        <li class="{{'active' if active_page == 'dashboard' }}"><a href="/dashboard"><span class="glyphicon glyphicon-file"></span> File Dashboard</a></li>
+      {%endif%}  
+        <li class="{{'active' if active_page == 'plans' }}"><a href="/plans"><span class="glyphicon glyphicon-usd"></span> Plans & Pricing</a></li>  
+      {%if session['logged']!=1%}
+      <li class="{{'active' if active_page == 'signup' }}"><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li class="{{'active' if active_page == 'login' }}"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {%endif%}
+      {%if session['logged']==1%}
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      {%endif%}
+    </ul>
+  </div>
+</nav>
+  <p>{{fileName}}</p>
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
